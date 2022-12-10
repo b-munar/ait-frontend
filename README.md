@@ -16,20 +16,20 @@ However, if you wish to get actual prop types in `.vue` imports (for example to 
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Project Setup and Compile and Hot-Reload for Development with Nvm and Yarn
 
 ```sh
-npm install
+nvm install v18.12.1
+nvm use
+yarn
+yarn dev
 ```
 
-### Compile and Hot-Reload for Development
+## Project Setup and Compile and Hot-Reload for Development with docker
 
 ```sh
-npm run dev
+docker build -t materio
+docker volume create materio-node-modules-volume
+docker run --name materio-container -it -p 5173:5173 -v $(pwd):/usr/src/app -v materio-volume-node-modules:/usr/src/app/node_modules materio
 ```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
