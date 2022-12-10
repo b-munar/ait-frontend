@@ -28,7 +28,7 @@ yarn dev
 ## Project Setup and Compile and Hot-Reload for Development with docker
 
 ```sh
-docker build -t materio
+docker build -t materio .
 docker volume create materio-node-modules-volume
 docker run --name materio-container -it -p 5173:5173 -v $(pwd):/usr/src/app -v materio-volume-node-modules:/usr/src/app/node_modules materio
 ```
