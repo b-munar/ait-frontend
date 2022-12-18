@@ -11,7 +11,30 @@ import { createApp } from 'vue'
 
 loadFonts()
 
-const app = createApp(App)
+import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
+import { provideApolloClient } from '@vue/apollo-composable'
+
+// HTTP connection to the API
+const httpLink = createHttpLink({
+  // You should use an absolute URL here
+  uri: 'http://localhost:8086/aituring/api',
+})
+
+// Cache implementation
+const cache = new InMemoryCache()
+
+// Create the apollo client
+const apolloClient = new ApolloClient({
+  link: httpLink,
+  cache,
+})
+
+const app = createApp({
+    setup () {
+      provideApolloClient(apolloClient)
+    },
+    render: () => h(App),
+})
 
 app.use(vuetify)
 app.use(createPinia())

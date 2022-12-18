@@ -1,12 +1,13 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
-import logo from '@/assets/logo.svg?raw'
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
+import logo from '@/assets/logo.svg?raw';
+import { useUserStore } from '@/stores/user';
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue';
+import { useTheme } from 'vuetify';
 
-import authV1MaskDark from '@/assets/images/pages/auth-v1-mask-dark.png'
-import authV1MaskLight from '@/assets/images/pages/auth-v1-mask-light.png'
-import authV1Tree2 from '@/assets/images/pages/auth-v1-tree-2.png'
-import authV1Tree from '@/assets/images/pages/auth-v1-tree.png'
+import authV1MaskDark from '@/assets/images/pages/auth-v1-mask-dark.png';
+import authV1MaskLight from '@/assets/images/pages/auth-v1-mask-light.png';
+import authV1Tree2 from '@/assets/images/pages/auth-v1-tree-2.png';
+import authV1Tree from '@/assets/images/pages/auth-v1-tree.png';
 
 const form = ref({
   email: '',
@@ -22,6 +23,12 @@ const authThemeMask = computed(() => {
 })
 
 const isPasswordVisible = ref(false)
+
+const userStore = useUserStore()
+
+const login = () => {
+  userStore.login(form.value.email, form.value.password)
+}
 </script>
 
 <template>
@@ -44,7 +51,7 @@ const isPasswordVisible = ref(false)
 
       <VCardText class="pt-2">
         <h5 class="text-h5 font-weight-semibold mb-1">
-          Welcome to Materio! 👋🏻
+          Welcome to Materio!👋🏻
         </h5>
         <p class="mb-0">
           Please sign-in to your account and start the adventure
@@ -52,7 +59,7 @@ const isPasswordVisible = ref(false)
       </VCardText>
 
       <VCardText>
-        <VForm @submit.prevent="() => {}">
+        <VForm @submit.prevent="login">
           <VRow>
             <!-- email -->
             <VCol cols="12">
@@ -92,7 +99,7 @@ const isPasswordVisible = ref(false)
               <VBtn
                 block
                 type="submit"
-                to="/"
+                
               >
                 Login
               </VBtn>

@@ -12,4 +12,19 @@ const router = createRouter({
   },
 })
 
+router.beforeEach((to, from, next) => {
+  const routerProtectAuth = to.matched.some(
+    (record) => record.meta.auth
+  );
+  const jwtToken = JSON.parse(localStorage.getItem("jwt_token")!);
+  if (routerProtectAuth && !jwtToken) {
+    next({ name: "login" });
+  } else if (!routerProtectAuth && jwtToken) {
+    next({ name: "index" });
+  } else {
+    next();
+  }
+});
+
+
 export default router
