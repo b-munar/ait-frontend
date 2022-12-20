@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import avatar1 from '@/assets/images/avatars/avatar-1.png';
-import { useUserStore } from '@/stores/user';
+// import { useUserStore } from '@/stores/user';
 import type { Anchor } from 'vuetify/lib/components';
 
 const avatarBadgeProps = {
@@ -12,9 +12,11 @@ const avatarBadgeProps = {
   bordered: true,
 }
 
-const userStore = useUserStore()
 
 
+// const logout = () => {
+//   userStore.logout()
+// }
 </script>
 
 <template>
@@ -116,7 +118,8 @@ const userStore = useUserStore()
           <VDivider class="my-2" />
 
           <!-- 👉 Logout -->
-          <VListItem @click="userStore.logout()">
+          <!-- <VListItem @click="logout()"> -->
+            <VListItem >
             <template #prepend>
               <VIcon
                 class="me-2"

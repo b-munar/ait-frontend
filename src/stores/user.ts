@@ -46,5 +46,12 @@ export const useUserStore = defineStore("user", {
         })
 
     },
+
+    // logout(){
+    //   localStorage.setItem('jwt_token', JSON.stringify(false));
+    //   router.push("/login");
+    // }
+
+
   },
 });

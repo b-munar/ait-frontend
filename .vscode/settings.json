@@ -26,7 +26,7 @@
         "editor.defaultFormatter": "dbaeumer.vscode-eslint",
     },
     // Extension: Volar
-    "volar.preview.port": 3000,
+    "volar.preview.port": 5173,
     "volar.completion.preferredTagNameCase": "pascal",
     // Extension: ESLint
     "eslint.options": {
