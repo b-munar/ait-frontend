@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { useTheme } from 'vuetify'
 import misc404 from '@/assets/images/pages/404.png'
 import miscMaskDark from '@/assets/images/pages/misc-mask-dark.png'
 import miscMaskLight from '@/assets/images/pages/misc-mask-light.png'
 import tree from '@/assets/images/pages/tree.png'
+import { useTheme } from 'vuetify'
 
 const vuetifyTheme = useTheme()
 const authThemeMask = computed(() => {
@@ -65,4 +65,5 @@ meta:
   layout: blank
   action: read
   subject: Auth
+  auth: true
 </route>

@@ -167,4 +167,5 @@ const login = () => {
 <route lang="yaml">
 meta:
   layout: blank
+  auth: false
 </route>

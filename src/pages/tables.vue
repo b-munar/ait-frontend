@@ -60,3 +60,8 @@ import TableFixedHeader from '@/views/user-interface/tables/TableFixedHeader.vue
     </VCol>
   </VRow>
 </template>
+
+<route lang="yaml">
+  meta:
+    auth: true
+</route>

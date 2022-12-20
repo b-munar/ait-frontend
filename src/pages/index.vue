@@ -113,3 +113,8 @@ const newProject = {
     </VCol>
   </VRow>
 </template>
+
+<route lang="yaml">
+  meta:
+    auth: true
+</route>

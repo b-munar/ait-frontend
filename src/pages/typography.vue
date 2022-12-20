@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TypographyHeadlines from '@/views/user-interface/typography/TypographyHeadlines.vue'
-import TypographyTexts from '@/views/user-interface/typography/TypographyTexts.vue'
+import TypographyHeadlines from '@/views/user-interface/typography/TypographyHeadlines.vue';
+import TypographyTexts from '@/views/user-interface/typography/TypographyTexts.vue';
 </script>
 
 <template>
@@ -14,3 +14,8 @@ import TypographyTexts from '@/views/user-interface/typography/TypographyTexts.v
     </VCol>
   </VRow>
 </template>
+
+<route lang="yaml">
+  meta:
+    auth: true
+</route>
