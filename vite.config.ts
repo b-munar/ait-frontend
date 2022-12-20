@@ -23,18 +23,18 @@ export default defineConfig({
     }),
     Pages({
       dirs: ['src/pages'],
-      extendRoute(route, parent) {
-        if (route.path === '/login') {
-          // Index is unauthenticated.
-          return route
-        }
+      // extendRoute(route, parent) {
+      //   if (route.path === '/login') {
+      //     // Index is unauthenticated.
+      //     return route
+      //   }
 
-        // Augment the route with meta that indicates that the route requires authentication.
-        return {
-          ...route,
-          meta: { auth: true },
-        }
-      },
+      //   // Augment the route with meta that indicates that the route requires authentication.
+      //   return {
+      //     ...route,
+      //     meta: { auth: true },
+      //   }
+      // },
     }),
     Layouts(),
     Components({
